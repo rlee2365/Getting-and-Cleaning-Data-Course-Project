@@ -52,5 +52,5 @@ write.csv(merged_dataset, merged_dataset_file)
 # Do they mean grouped by activity and grouped by subject, or grouped by both???
 grouped_dataset <- group_by(merged_dataset, subject, activity)
 summarized_dataset <- summarize(grouped_dataset, across(tbodyaccmeanx:last_col(), mean))
-summarized_dataset_file <- 'summarized_dataset.csv'
-write.csv(summarized_dataset, summarized_dataset_file)
+summarized_dataset_file <- 'summarized_dataset.txt'
+write.table(summarized_dataset, summarized_dataset_file, row.names=FALSE)
